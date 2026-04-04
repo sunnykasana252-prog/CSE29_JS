@@ -1,31 +1,42 @@
-// Select elements
 const heading = document.getElementById("heading");
 const para = document.getElementById("para");
 const input = document.getElementById("inputText");
 
-// Change heading text
-document.getElementById("changeText").addEventListener("click", function() {
-    heading.textContent = input.value || "No text entered!";
+let fontSize = 16;
+let isHidden = false;
+
+// Change Heading
+document.getElementById("changeText").addEventListener("click", () => {
+    heading.textContent = input.value || "Please enter text!";
 });
 
-// Change background color
-document.getElementById("changeColor").addEventListener("click", function() {
-    document.body.style.backgroundColor = 
-        document.body.style.backgroundColor === "lightblue" ? "white" : "lightblue";
+// Change Background
+document.getElementById("changeColor").addEventListener("click", () => {
+    document.body.style.backgroundColor =
+        document.body.style.backgroundColor === "lightblue"
+        ? "#e6e6e6"
+        : "lightblue";
 });
 
-// Increase font size
-document.getElementById("increaseFont").addEventListener("click", function() {
-    let currentSize = window.getComputedStyle(para).fontSize;
-    let newSize = parseFloat(currentSize) + 2;
-    para.style.fontSize = newSize + "px";
+// Increase Font Size
+document.getElementById("increaseFont").addEventListener("click", () => {
+    fontSize += 2;
+    para.style.fontSize = fontSize + "px";
 });
 
-// Show/Hide paragraph
-document.getElementById("togglePara").addEventListener("click", function() {
-    if (para.style.display === "none") {
-        para.style.display = "block";
-    } else {
-        para.style.display = "none";
-    }
+// Show/Hide Paragraph
+document.getElementById("togglePara").addEventListener("click", () => {
+    isHidden = !isHidden;
+    para.style.display = isHidden ? "none" : "block";
+});
+
+// Reset Everything
+document.getElementById("reset").addEventListener("click", () => {
+    heading.textContent = "Welcome to JavaScript Lab";
+    para.style.fontSize = "16px";
+    document.body.style.backgroundColor = "#e6e6e6";
+    para.style.display = "block";
+    input.value = "";
+    fontSize = 16;
+    isHidden = false;
 });
