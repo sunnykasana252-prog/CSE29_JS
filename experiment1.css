@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grade Calculator</title>
-
-<style>
-
 body{
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg,#74ebd5,#ACB6E5);
@@ -60,28 +51,3 @@ button:hover{
     font-weight:bold;
     color:#333;
 }
-
-</style>
-
-</head>
-
-<body>
-
-<div class="container">
-
-<h1>Grade Calculator</h1>
-
-<form>
-    <input type="number" id="subjects" placeholder="Enter number of subjects">
-</form>
-
-<button onclick="calculateResult()">Calculate Result</button>
-
-<div id="result"></div>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-</html>

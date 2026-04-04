@@ -12,7 +12,7 @@
 <p class="p1"></p> 
 
  <div id="d"></div>  -->
- <button onclick="onclick()">onclick</button><br>
+ <!-- <button onclick="onclick()">onclick</button><br>
  <br>
  <button onclick="onmouseout()">onmouseout</button><br>
  <br>
@@ -22,7 +22,21 @@
  <br>
  <button onclick="onmouseremove()">onmouseremove</button><br>
  <br>
-  <button onclick="ondblclick()">ondblclick</button><br>
+  <button onclick="ondblclick()">ondblclick</button><br> -->
+
+<h2>create object from json string </h2>
+
+<p id="demo"></p>
+
+  <script>
+    var text='{"employees":[' +
+     '{"firstName":"john","lastName":"Doe"},' +
+    '{"firstName":"Anna","lastName":"smith"},'+
+ '{"firstName":"peter","lastName":"jones"}]}';
+
+ obj=JSON.parse(text);
+ document.getElementById("demo").innerHTML=obj.emplyee[1].first
+  </script>
     <script src="newscript.js"></script>
 </body>
 </html>
